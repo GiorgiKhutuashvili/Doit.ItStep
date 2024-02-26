@@ -28,7 +28,7 @@ namespace StudentManagementSystem
                 else if (!IsAllLetters(firstName))
                 {
                     Console.WriteLine("Invalid input. First name must contain only letters.");
-                    firstName = ""; // Resetting firstName to trigger the loop again
+                    firstName = "";
                 }
             } while (string.IsNullOrWhiteSpace(firstName));
 
@@ -44,7 +44,7 @@ namespace StudentManagementSystem
                 else if (!IsAllLetters(lastName))
                 {
                     Console.WriteLine("Invalid input. Last name must contain only letters.");
-                    lastName = ""; // Resetting lastName to trigger the loop again
+                    lastName = "";
                 }
             } while (string.IsNullOrWhiteSpace(lastName));
 
@@ -93,7 +93,6 @@ namespace StudentManagementSystem
             Console.WriteLine("Student added successfully.");
         }
 
-        // Method to check if a string contains only letters
         private bool IsAllLetters(string input)
         {
             foreach (char c in input)
@@ -147,7 +146,7 @@ namespace StudentManagementSystem
                     else if (!IsAllLetters(firstName))
                     {
                         Console.WriteLine("Invalid input. First name must contain only letters.");
-                        firstName = ""; // Resetting firstName to trigger the loop again
+                        firstName = "";
                     }
                 } while (string.IsNullOrWhiteSpace(firstName));
 
@@ -163,14 +162,12 @@ namespace StudentManagementSystem
                     else if (!IsAllLetters(lastName))
                     {
                         Console.WriteLine("Invalid input. Last name must contain only letters.");
-                        lastName = ""; // Resetting lastName to trigger the loop again
+                        lastName = "";
                     }
                 } while (string.IsNullOrWhiteSpace(lastName));
 
-                // Combine updated first name and last name
                 string newName = $"{firstName} {lastName}";
 
-                // Update student's name
                 studentToUpdate.Name = newName;
 
                 SaveDataToFile();
@@ -181,11 +178,6 @@ namespace StudentManagementSystem
                 Console.WriteLine("Student not found with the given roll number.");
             }
         }
-
-
-
-
-
 
         public void UpdateStudentGrade()
         {
@@ -217,7 +209,7 @@ namespace StudentManagementSystem
                     }
                 } while (!validGrade);
 
-                studentToUpdate.Grade = newGrade; // Assign the new grade to the student
+                studentToUpdate.Grade = newGrade;
                 SaveDataToFile();
                 Console.WriteLine("Grade updated successfully.");
             }

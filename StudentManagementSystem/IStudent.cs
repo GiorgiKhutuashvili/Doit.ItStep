@@ -1,6 +1,5 @@
 ﻿namespace StudentManagementSystem
 {
-    // Interface representing a student
     public interface IStudent
     {
         string Name { get; set; }
